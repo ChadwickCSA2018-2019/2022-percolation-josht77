@@ -38,7 +38,6 @@ public class PercolationStats {
 		}
 	}
 
-	// done
 	public double mean() {
 		if (mean == -1) {
 			mean = StdStats.mean(thresholds);
@@ -46,7 +45,6 @@ public class PercolationStats {
 		return mean;
 	}
 
-	// done
 	public double stddev() {
 		if (stddev == -1) {
 			stddev = StdStats.stddev(thresholds);
@@ -55,12 +53,10 @@ public class PercolationStats {
 
 	}
 
-	// done
 	public double confidenceLo() {
 		return mean() - (COEFF * stddev()) / Math.sqrt(thresholds.length);
 	}
 
-	// done
 	public double confidenceHi() {
 		return mean() + (COEFF * stddev()) / Math.sqrt(thresholds.length);
 	}
@@ -68,14 +64,7 @@ public class PercolationStats {
 	public static void main(String[] args) {
 		// test client (described at
 		// http://coursera.cs.princeton.edu/algs4/assignments/percolation.html)
-		System.out.println(args[0] + " " + args[1]);
 		int n = Integer.parseInt(args[0]); // convert the string argument to an integer
+		System.out.println(args[0] + " " + args[1]);
 	}
 }
-
-// TODO: perform trials independent experiments on an n-by-n grid
-// TODO: calculate sample mean of percolation threshold
-// TODO: calculate sample standard deviation of percolation threshold
-// TODO: return low  endpoint of 95% confidence interval
-// TODO: return high endpoint of 95% confidence interval
-// test client (described at http://coursera.cs.princeton.edu/algs4/assignments/percolation.html)

@@ -14,7 +14,7 @@ public class Percolation {
 
     private int top = 0;
     private int bottom = 0;
-	private boolean[][] grid; // (openslots) true - open || false - closed
+	private boolean[][] grid; // true - open || false - closed
 	private int numOfOpenSites; // gridSide
 	private WeightedQuickUnionUF percolation; // backwash
 	private WeightedQuickUnionUF isFullUF; // uf
@@ -79,7 +79,6 @@ public class Percolation {
         return grid[row - 1][col - 1] == true;
 	}
 
-	// done
 	public boolean isFull(int row, int col) {
         check(row, col);
 
@@ -87,17 +86,14 @@ public class Percolation {
         return isFullUF.connected(index, top);
 	}
 
-	// done
 	public int numberOfOpenSites() {
 		return totalOpen;
 	}
 
-	// done
 	public boolean percolates() {
         return percolation.connected(top, bottom);
 	}
 
-	//done
 	public static void main(String[] args) {
 		Percolation test = new Percolation(2);
 		test.open(1, 1);

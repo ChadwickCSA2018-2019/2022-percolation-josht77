@@ -14,8 +14,8 @@ import edu.princeton.cs.algs4.StdStats;
 /**
  * @author Josh
  * 
- *         A {@link PercolationStats} performs a series of trials using the
- *         percolation class. This program inputs the results into a array. The
+ *         A {@link PercolationStats} performs a number of trials using the
+ *         percolation class. This program inputs the results into an array. The
  *         values in the array are used to calculate mean, standard deviation,
  *         confidence high and low.
  */
@@ -31,7 +31,7 @@ public class PercolationStats {
 	 */
 	public PercolationStats(int n, int trials) {
 		if (n < 1 || trials < 1) {
-			throw new IllegalArgumentException("cannot create a 0-by-0 grid or can't have 0 trials");
+			throw new IllegalArgumentException("cannot create a 0-by-0 grid or 0 trials");
 		}
 		trialRuns = new double[trials];
 		for (int i = 0; i < trials; i++) {
@@ -53,7 +53,7 @@ public class PercolationStats {
 	}
 
 	/**
-	 * Return the standard deviation of the values in the trialRuns array.
+	 * Returns the standard deviation of the values in the trialRuns array.
 	 * 
 	 * @return the standard deviation of the values in the trialRuns array
 	 */
@@ -62,7 +62,7 @@ public class PercolationStats {
 	}
 
 	/**
-	 * Return the confidence low of the values in the trialRuns array.
+	 * Returns the confidence low of the values in the trialRuns array.
 	 * 
 	 * @return the confidence low of the values in the trialRuns array
 	 */
@@ -71,7 +71,7 @@ public class PercolationStats {
 	}
 
 	/**
-	 * Return the confidence high of the values in the trialRuns array.
+	 * Returns the confidence high of the values in the trialRuns array.
 	 * 
 	 * @return the confidence high of the values in the trialRuns array
 	 */
@@ -87,7 +87,7 @@ public class PercolationStats {
 	public static void main(String[] args) {
 		// test client (described at
 		// http://coursera.cs.princeton.edu/algs4/assignments/percolation.html)
-		int n = Integer.parseInt(args[0]); // converts our first argument to an integer
+		int n = Integer.parseInt(args[0]); // converts first argument to an integer
 		int trials = Integer.parseInt(args[1]);
 		PercolationStats percStats = new PercolationStats(n, trials);
 		System.out.println("mean = " + percStats.mean());
